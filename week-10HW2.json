@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A bar chart showing the Percentage of Immunized people for a specific disease",
+  "data": {
+    "url": "https://raw.githubusercontent.com/zydrux/FIT3179-Week10/main/Testing.csv",
+    "format": {
+      "type": "csv"
+    }
+  }, 
+  "params": [
+    {
+      "name": "max_percentage",
+      "value": 100,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "name": "Maximum Percentage"
+      }
+    },
+    {
+    "name": "country_status",
+    "bind": {
+      "input": "select",
+      "labels": [
+        "Show All",
+        "Developed",
+        "Developing"
+     ],
+     "options": [
+        null,
+        "Developed",
+        "Developing"
+      ],
+      "name": "Select Country Status "
+    }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Status == country_status || country_status == null"},
+    {"filter": "datum.Polio <= max_percentage"}
+  ], 
+  "layer":[{
+  "width": {"step": 10},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Country", "type": "ordinal", "axis":{
+      "labelLimit":50
+    }},
+    "y": {
+      "aggregate": "average",
+      "field": "Polio",
+      "title": "% Immunized",
+      "stack": null
+    },
+    "opacity": {"value": 0.75}
+  ,
+  "tooltip":[{"field": "Country"}, {"field": "Polio", "type": "quantitative", "title": "% Immunized"}]}},
+  {
+    "mark":{"type": "text",
+        "fontStyle": "italic",
+        "fontSize": 11.5,
+        "align": "top",
+        "baseline": "bottom",
+        "dy": -100},
+    "transform": [{"filter": "datum.Country == 'Australia'"}],
+    "encoding": {
+        "text": {"field": "Country", "type": "nominal"}
+        }
+  }]
+}
