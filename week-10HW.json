@@ -69,7 +69,7 @@
          "color": {"field": "Life-expectancy", "type":"quantitative"},
          "tooltip":[
            {"field": "properties.name", "type": "nominal", "title":"Country"},
-           {"field": "Life-expectancy", "type": "quantitative", "format": ","}
+           {"field": "Life-expectancy", "type": "quantitative", "format": ",", "title": "Life expectancy" }
          ]
       }
     }
