@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600, 
+  "params":[{
+    "name": "country_status",
+    "bind": {
+      "input": "select",
+      "labels": [
+        "Show All",
+        "Developed",
+        "Developing"
+     ],
+     "options": [
+        null,
+        "Developed",
+        "Developing"
+      ],
+      "name": "Select Country Status"
+    }
+    }],
+  "layer":[
+    {
+      "projection":{"type": "equalEarth"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/zydrux/FIT3179-vegalite/main/custom.geo%20(1).json",
+        "format":{
+          "type": "topojson",
+          "feature": "Ass-2-map"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.admin",
+          "from":{
+            "data":{"url":"https://raw.githubusercontent.com/zydrux/FIT3179-Week10/main/Testing.csv"},
+            "key": "Country",
+            "fields": ["Schooling", "Life-expectancy", "Adult-Mortality", "Year", "BMI", "Hepatitis-B", "infant-deaths", "Measles", "Status"]
+          }
+        }
+        ],
+      "mark": {"type":"geoshape", "stroke": "white", "fill": "gray"},
+      "encoding": {
+         "tooltip":[
+           {"field": "properties.name", "type": "nominal", "title":"Country"}]
+           }},
+    {
+      "projection":{"type": "equalEarth"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/zydrux/FIT3179-vegalite/main/custom.geo%20(1).json",
+        "format":{
+          "type": "topojson",
+          "feature": "Ass-2-map"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.admin",
+          "from":{
+            "data":{"url":"https://raw.githubusercontent.com/zydrux/FIT3179-Week10/main/Testing.csv"},
+            "key": "Country",
+            "fields": ["Schooling", "Life-expectancy", "Adult-Mortality", "Year", "BMI", "Hepatitis-B", "infant-deaths", "Measles", "Status"]
+          }
+        },
+        {"filter": "datum.Status == country_status || country_status == null"}
+        ],
+      "mark": {"type":"geoshape", "stroke": "white"},
+      "encoding": {
+         "color": {"field": "Life-expectancy", "type":"quantitative"},
+         "tooltip":[
+           {"field": "properties.name", "type": "nominal", "title":"Country"},
+           {"field": "Life-expectancy", "type": "quantitative", "format": ","}
+         ]
+      }
+    }
+  ]
+}
