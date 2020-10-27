@@ -1,4 +1,4 @@
-Country,Year,Status,Life-expectancy,Adult-Mortality,infant-deaths,Alcohol,percentage-expenditure,Hepatitis-B,Measles,BMI,under-five-deaths,Polio,Total-expenditure,Diphtheria,HIV/AIDS,GDP,Population,thinness-1-19 years,thinness-5-9 years,Income-composition-of-resources,Schooling
+Country,Year,Status,Life-expectancy,Adult-Mortality,infant-deaths,Alcohol,percentage-expenditure,Hepatitis-B,Measles,BMI,underfivedeaths,Polio,Total-expenditure,Diphtheria,HIV/AIDS,GDP,Population,thinness-1-19 years,thinness-5-9 years,Income-composition-of-resources,Schooling
 Afghanistan,2014,Developing,59.9,271,64,0.01,73.52358168,62,492,18.6,86,58,8.18,62,0.1,612.696514,327582,17.5,17.5,0.476,10
 Albania,2014,Developing,77.5,8,0,4.51,428.7490668,98,0,57.2,1,98,5.88,98,0.1,4575.763787,288914,1.2,1.3,0.761,14.2
 Algeria,2014,Developing,75.4,11,21,0.01,54.2373183,95,0,58.4,24,95,7.21,95,0.1,547.8517,39113313,6,5.8,0.741,14.4
