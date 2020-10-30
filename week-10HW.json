@@ -57,9 +57,9 @@
         {
           "lookup": "properties.admin",
           "from":{
-            "data":{"url":"https://raw.githubusercontent.com/zydrux/FIT3179-Week10/main/Testing.csv"},
+            "data":{"url":"https://raw.githubusercontent.com/zydrux/FIT3179-Assignment-2/main/testing2.csv"},
             "key": "Country",
-            "fields": ["Schooling", "Life-expectancy", "Adult-Mortality", "Year", "BMI", "Hepatitis-B", "infant-deaths", "Measles", "Status"]
+            "fields": ["Schooling", "Life-expectancy", "Adult-Mortality", "Year", "BMI", "Hepatitis-B", "infant-deaths", "Measles", "Status", "Alcohol", "Population", "thinness-1-19"]
           }
         },
         {"filter": "datum.Status == country_status || country_status == null"}
@@ -69,7 +69,10 @@
          "color": {"field": "Life-expectancy", "type":"quantitative", "sort": "descending"},
          "tooltip":[
            {"field": "properties.name", "type": "nominal", "title":"Country"},
-           {"field": "Life-expectancy", "type": "quantitative", "format": ",", "title": "Life expectancy" }
+           {"field": "Life-expectancy", "type": "quantitative", "format": ",", "title": "Life expectancy"},
+           {"field": "BMI", "type": "quantitative", "format": ",", "title": "BMI"},
+           {"field": "Alcohol", "type": "quantitative", "format": ",", "title": "Litres of pure Alcohol consumed per capita"},
+           {"field": "thinness-1-19", "type": "quantitative", "format":",", "title": "Thinness of 1-19 y/o"}
          ]
       }
     }
