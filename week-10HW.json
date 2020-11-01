@@ -71,9 +71,7 @@
            {"field": "properties.name", "type": "nominal", "title":"Country"},
            {"field": "Life-expectancy", "type": "quantitative", "format": ",", "title": "Life expectancy"},
            {"field": "BMI", "type": "quantitative", "format": ",", "title": "BMI"},
-           {"field": "Alcohol", "type": "quantitative", "format": ",", "title": "Litres of pure Alcohol consumed per capita"},
-           {"field": "thinness-1-19", "type": "quantitative", "format":",", "title": "Thinness of 1-19 y/o"}
-         ]
+           {"field": "Alcohol", "type": "quantitative", "format": ",", "title": "Litres of pure Alcohol consumed per capita"}         ]
       }
     }
   ]
